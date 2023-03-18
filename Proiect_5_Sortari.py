@@ -22,7 +22,7 @@ def copy_back(a, v):
             count += 1
 
 def RadixSort(v, base):
-    if base + len(v) > 2 * (10**8):
+    if base + len(v) > 11 * (10**7):
         print("RADIXSORT nu poate sorta (eficient)!")
         return
     bs = []
@@ -79,7 +79,7 @@ def CountSort(L):
     for x in L:
         if x > maxim:
             maxim = x
-    if maxim + len(L) > 2 * (10**8):
+    if maxim + len(L) > 11 * (10**7):
         print("COUNTSORT nu poate sorta (eficient)!")
         return 
     Fr = [0] * (maxim + 1)
@@ -177,20 +177,19 @@ def NativeSort(L):
 #MAIN:
 
 Tests = [(10**3, 10**3), (10**3, 10**6), (10**3, 10**8), (10**6, 10**3), (10**6, 10**6), 
-         (10**6, 10**8), (10**7, 10**3), (10**7, 10**6), (10**7, 10**8), (10**8, 10**8)]
+         (10**6, 10**8), (10**7, 10**3), (10**7, 10**6), (10**7, 10**8), (10**8, 10**9)]
 
 
-#st = 0
-#dr = len(Tests)
-st = 3
-dr = st + 1
+st = 0
+dr = len(Tests)
+#st = 9
+#dr = st + 1
 for i in range(st, dr):
     print(f"N = {Tests[i][0]}")
     print(f"Max = {Tests[i][1]}")
     print()
     L = []
     ###
-    
     for j in range(Tests[i][0]):
         L.append(random.randint(0, Tests[i][1]))
     print("RadixSort, base 10:\n")
@@ -226,7 +225,6 @@ for i in range(st, dr):
     print("ShellSort:\n")
     Sorts(ShellSort, L)
     L.clear()
-    
     ##
     for j in range(Tests[i][0]):
         L.append(random.randint(0, Tests[i][1]))
