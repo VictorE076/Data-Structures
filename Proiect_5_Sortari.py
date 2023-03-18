@@ -182,7 +182,7 @@ Tests = [(10**3, 10**3), (10**3, 10**6), (10**3, 10**8), (10**6, 10**3), (10**6,
 
 #st = 0
 #dr = len(Tests)
-st = 2
+st = 3
 dr = st + 1
 for i in range(st, dr):
     print(f"N = {Tests[i][0]}")
@@ -190,6 +190,7 @@ for i in range(st, dr):
     print()
     L = []
     ###
+    
     for j in range(Tests[i][0]):
         L.append(random.randint(0, Tests[i][1]))
     print("RadixSort, base 10:\n")
@@ -225,6 +226,7 @@ for i in range(st, dr):
     print("ShellSort:\n")
     Sorts(ShellSort, L)
     L.clear()
+    
     ##
     for j in range(Tests[i][0]):
         L.append(random.randint(0, Tests[i][1]))
@@ -232,32 +234,3 @@ for i in range(st, dr):
     NativeSort(L)
     L.clear()
     #
-
-
-
-
-"""
-Ldd = []
-Ldd.append(1)
-Ldd.append(4)
-Ldd.append(89)
-print(Ldd)
-Ldd.clear()
-print(Ldd)
-Ldd.append(12)
-Ldd.append(7)
-Ldd.append(12)
-Ldd.append(7)
-Ldd.append(11)
-Ldd.append(3)
-Ldd.append(19)
-Ldd.append(700)
-print(Ldd)
-Ldd.clear()
-print(Ldd)
-Ldd.append(1000)
-print(Ldd)
-"""
-
-
-
